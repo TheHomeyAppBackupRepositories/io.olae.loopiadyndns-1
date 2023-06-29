@@ -1,0 +1,22 @@
+{
+  "tokens": {
+    "next_matavfall": "Next foodwaste",
+    "next_restavfall": "Next other waste"
+  },
+  "notifications": {
+    "welcome": "Välkommen till Loopia Dyndns. Gå till appens inställningar för att konfigurera konto och domän hos Loopia.",
+    "nohost": "Loopia svarade att det konfigurerade domännamet inte finns. Skapa ett A-record i Loopias DNS editor för att fortsätta.",
+    "badauth": "Inloggningen till Loopia misslyckades. Kontrollera ditt användarnamn och lösenord."
+  },
+  "settings": {
+    "title": "Loopia Dyndns",
+    "info": "Fyll i dina kontouppgifter och det domännamn du vill uppdatera dynamiskt.",
+    "loopiaauth": "Loopia login",
+    "domainsettings": "Domäninställningar",
+    "login": "Användarnamn",
+    "password": "Lösenord",
+    "domain": "Domännamn",
+    "save": "Spara inställningar",
+    "savedok": "Dina inställningar har sparats"
+  }
+}

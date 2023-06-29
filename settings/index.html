@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- The '/homey.js' script must be included in your settings view to work -->
+    <script type="text/javascript" src="/homey.js" data-origin="settings"></script>
+  </head>
+  <body>
+    <h1 data-i18n="settings.title">
+      <!--
+        This field will automatically be filled by a translated string with key 'settings.title'.
+        Read more about translations at Internationalization.
+      -->
+    </h1>
+    <p data-i18n="settings.info">
+      <!-- This field will also be translated -->
+    </p>
+
+    <fieldset>
+      <legend data-i18n="settings.loopiaauth"></legend>
+      <div class="field row">
+        <label for="login" data-i18n="settings.login"></label>
+        <input id="login" type="text" value="" />
+      </div>
+      <div class="field row">
+        <label for="password" data-i18n="settings.password"></label>
+        <input id="password" type="password" value="" />
+      </div>
+    </fieldset>
+
+    <p data-i18n="settings.domaininfo">
+      <!-- This field will also be translated -->
+    </p>
+
+    <fieldset>
+      <legend data-i18n="settings.domainsettings"></legend>
+      <div class="field row">
+        <label for="domain" data-i18n="settings.domain"></label>
+        <input id="domain" type="text" value="" />
+      </div>
+    </fieldset>
+
+    <button id="save" class="right" data-i18n="settings.save"></button>
+
+    <script type="text/javascript">
+      // a method named 'onHomeyReady' must be present in your code
+      function onHomeyReady(Homey) {
+        // Tell Homey we're ready to be displayed
+        Homey.ready();
+
+        var loginElement = document.getElementById('login');
+        var passwordElement = document.getElementById('password');
+        var domainElement = document.getElementById('domain');
+        var saveElement = document.getElementById('save');
+
+        Homey.get('login', function (err, login) {
+          if (err) return Homey.alert(err);
+          loginElement.value = login;
+        });
+
+        Homey.get('password', function (err, password) {
+          if (err) return Homey.alert(err);
+          passwordElement.value = password;
+        });
+
+        Homey.get('domain', function (err, domain) {
+          if (err) return Homey.alert(err);
+          if( domain !== null ) { domainElement.value = domain.toLowerCase(); }
+        });
+
+        saveElement.addEventListener('click', function (e) {
+          Homey.set('login', loginElement.value, function (err) {
+            if (err) return Homey.alert(err);
+          });
+          Homey.set('password', passwordElement.value, function (err) {
+            if (err) return Homey.alert(err);
+          });
+          Homey.set('domain', domainElement.value.toLowerCase(), function (err) {
+            if (err) return Homey.alert(err);
+          });
+          Homey.alert(Homey.__('settings.savedok'));
+        });
+      }
+    </script>
+  </body>
+</html>

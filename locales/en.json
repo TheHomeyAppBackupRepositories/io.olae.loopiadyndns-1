@@ -1,0 +1,22 @@
+{
+  "tokens": {
+    "next_matavfall": "Next foodwaste",
+    "next_restavfall": "Next other waste"
+  },
+  "notifications": {
+    "welcome": "Welcome to Loopia Dyndns. Go to app settings page to configure domain name and login details.",
+    "nohost": "Loopia returned that the configured host does not exist. Please create an A-record using Loopias DNS editor",
+    "badauth": "The configured username and password failed to authenticate with Loopia"
+  },
+  "settings": {
+    "title": "Loopia Dyndns",
+    "info": "Enter your loopia login details and domain name to dynamically update.",
+    "loopiaauth": "Loopia login",
+    "domainsettings": "Domainsettings",
+    "login": "Username",
+    "password": "Password",
+    "domain": "Domain",
+    "save": "Save settings",
+    "savedok": "Settings have been saved"
+  }
+}
